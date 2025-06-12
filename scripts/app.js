@@ -92,20 +92,41 @@ $(document).ready(function () {
 
         mudarConteudo(conteudo);
         $('#carregarUsuario').click(function (){
-            $.get("https://jsonplaceholder.typicode.com/users/1", 'name',
-                function (data, textStatus, jqXHR) {
-                    $('#usuarioNome').text(`${data.text()}`);
-                },
-                "json"
-            );
-
-            
+        $.get("https://jsonplaceholder.typicode.com/users/1", function (data, textStatus, jqXHR) {
+            $('#usuarioNome').text(data.name);
+        }, "json");
         })
-
-
-
-
     });
+
+    
+    $('#7').click(function () {
+        const conteudo = `<button id="carregarPosts">Carregar posts</button>
+
+<ul id="listaPosts"></ul>`;
+        mudarConteudo(conteudo);
+        $("#listaPosts").css('font-size', '8px');
+        $('#carregarPosts').click(function () {
+        $.ajax({
+            type: "GET",
+            url: "https://jsonplaceholder.typicode.com/posts",
+            dataType: "JSON",
+            success: function (response) {
+                let dados = '';
+
+                for (let i = 0; i <= 4; i++) {
+                    const dado = response[i];
+                        dados += `<p>Userid: ${dado.userId}</p>
+                        <p>Id: ${dado.id}</p>
+                        <p>Title: ${dado.title}</p>
+                        <p> ${dado.body}</p>`;
+                }
+
+                $('#listaPosts').append(dados);
+            }
+        });
+    });
+});
+
 
 
 
