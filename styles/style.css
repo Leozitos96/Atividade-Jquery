@@ -1,0 +1,71 @@
+.cabecalho ul{
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    text-decoration: none;
+}
+.cabecalho{
+    height: 50px;
+    align-items: center;
+    background: #eee;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    box-shadow: 3px 3px 0px 1px #bbb;
+}
+
+.cabecalho ul li{
+    cursor: pointer;
+    font-size: 14px;
+}
+.cabecalho ul li:hover{
+ color: #777;
+}
+
+#container{
+    height: 300px;
+    position: relative;
+    max-width: 400px;
+    border-radius: 0.75rem;
+    background-color: rgba(17, 24, 39, 1);
+    padding: 2rem;
+    color: rgba(243, 244, 246, 1);
+    margin: auto;
+    margin-top: 12%;
+
+    
+
+    background: #ddd;
+    border: 1px solid #bbb;
+}
+
+#conteudo{
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#conteudo button{
+    height: 30px;
+    margin-top: 5px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#conteudo #foto{
+    margin-top: 30px;
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+}
+
+#conteudo button:hover{
+    color: #777;
+}
+
+#conteudo #nome{
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
